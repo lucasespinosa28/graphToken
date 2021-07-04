@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: graphToken
@@ -22,7 +22,7 @@ dataSources:
         - Transfer
       abis:
         - name: graphToken
-          file: ./abis/graphToken.json
+          file: graphToken\abis\graphToken.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleApproval
@@ -36,4 +36,4 @@ dataSources:
           handler: handleNewPendingOwnership
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: graphToken\graphToken.wasm
